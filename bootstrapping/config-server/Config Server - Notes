@@ -20,7 +20,7 @@ Create Git Config Repo
 # use local repo
 - windows: file:///
 - *nix: file://
-- spring.cloud.config.server.git.uri=file://${user.home}/dev/workspaces/spring-cloud-baeldung-configs
+- spring.cloud.config.server.git.uri=file://${user.home}/dev/workspaces/spring-cloud-configs
 
 ---------------------------------------------------------------------------------
 bootstrap.properties in each app
