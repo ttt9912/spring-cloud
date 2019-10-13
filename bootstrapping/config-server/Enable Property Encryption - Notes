@@ -1,0 +1,44 @@
+https://www.baeldung.com/spring-cloud-configuration
+
+---------------------------------------------------------------------------------
+Setup JCE
+---------------------------------------------------------------------------------
+JCE: Java Cryptography Extension
+
+- put the jars extracted from jce_policy-8.zip to
+/Library/Java/JavaVirtualMachines/**< jdk_v>**/Contents/Home/jre/lib/security
+
+- download JCS for Java 8
+https://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html
+
+---------------------------------------------------------------------------------
+generate keystore
+---------------------------------------------------------------------------------
+-> simple alternative: set the encrypt.key for symmetric encryption
+
+- keytool -genkeypair -alias config-server-key \
+         -keyalg RSA -keysize 4096 -sigalg SHA512withRSA \
+         -dname 'CN=Config Server,OU=Spring Cloud,O=Baeldung' \
+         -keypass my-k34-s3cr3t -keystore config-server.jks \
+         -storepass my-s70r3-s3cr3t
+
+- put generated config-server.jks file to /resources
+
+- add encrypt.keystore.* properties to bootstrap.properties
+ (https://github.com/spring-cloud/spring-cloud-config/issues/1111)
+
+---------------------------------------------------------------------------------
+encrypt/decrypt values with endpoints
+---------------------------------------------------------------------------------
+https://cloud.spring.io/spring-cloud-config/reference/html/#_encryption_and_decryption
+
+(doesn't work)
+
+---------------------------------------------------------------------------------
+encrypt/decrypt values spring boot cli
+---------------------------------------------------------------------------------
+# symmetric
+    $ spring encrypt mysecret --key foo
+
+# asymmetric, with keystore
+    $ spring encrypt mysecret --key @${HOME}/.ssh/id_rsa.pub

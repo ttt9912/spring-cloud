@@ -1,0 +1,12 @@
+ ------------------------------------------------------------------
+ Gateway
+ ------------------------------------------------------------------
+ - reverse proxy
+ - allows all responses to originate from a single host
+ - eliminates the need for CORS
+ -  convenient place to handle common problems like authentication
+
+ ------------------------------------------------------------------
+ Zuul
+ ------------------------------------------------------------------
+ TODO

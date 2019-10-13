@@ -1,0 +1,17 @@
+---------------------------------------------------------------------------------
+Auto Configuration
+---------------------------------------------------------------------------------
+- @EnableEncryptableProperties - not needed when using jasypt-spring-boot-starter
+
+---------------------------------------------------------------------------------
+Set Master Password & algorithm
+---------------------------------------------------------------------------------
+- jasypt.encryptor.password (required)
+- jasypt.encryptor.algorithm (default: TODO)
+
+- more configs: https://github.com/ulisesbocchio/jasypt-spring-boot
+
+---------------------------------------------------------------------------------
+manual encryption/decryption - testing
+---------------------------------------------------------------------------------
+==> https://www.devglan.com/online-tools/jasypt-online-encryption-decryption

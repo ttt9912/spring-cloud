@@ -1,0 +1,23 @@
+---------------------------------------------------------------------------------
+Discovery
+---------------------------------------------------------------------------------
+- let the servers find each other
+- applications could be running on any ip/port
+- we need a central address registry that serves as application address lookup
+
+---------------------------------------------------------------------------------
+Eureka discovery server
+---------------------------------------------------------------------------------
+- still Spring Boot v1x!!
+
+---------------------------------------------------------------------------------
+crete bootstrap.properties
+---------------------------------------------------------------------------------
+contains
+- config server url
+- app name for config git repo
+
+---------------------------------------------------------------------------------
+create discovery-server.properties in Config Git repo
+---------------------------------------------------------------------------------
+- contains the actual application properties

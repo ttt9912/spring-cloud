@@ -1,0 +1,36 @@
+---------------------------------------------------------------------------------
+Config Server
+---------------------------------------------------------------------------------
+- storing and distributing configuration across multiple applications
+  and environments
+- avoid configuring each environment before scaling applications horizontally
+- avoid security risk by baking configuration into the applications
+
+---------------------------------------------------------------------------------
+Create Git Config Repo
+---------------------------------------------------------------------------------
+- consolidate all configuration into a single Git repository
+- config server manages configuration for all applications
+- config can be modified at application runtime
+
+- create folder
+- git init
+- let spring.cloud.config.server.git.uri point to github repo
+
+# use local repo
+- windows: file:///
+- *nix: file://
+- spring.cloud.config.server.git.uri=file://${user.home}/dev/workspaces/spring-cloud-baeldung-configs
+
+---------------------------------------------------------------------------------
+bootstrap.properties in each app
+---------------------------------------------------------------------------------
+- each app has this instead of application.properties
+- contains config server location
+- a parent Spring ApplicationContext loads the bootstrap.properties first
+- this special ApplicationContext that will also decrypt any encrypted properties
+
+---------------------------------------------------------------------------------
+Add Eureka dependency
+---------------------------------------------------------------------------------
+- add eureka client dependency to pom
