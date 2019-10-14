@@ -8,7 +8,7 @@ import org.springframework.cloud.netflix.eureka.server.EnableEurekaServer;
 import org.springframework.context.annotation.Bean;
 
 /*
- *
+ * TODO actuator/health for all services
  */
 @SpringBootApplication
 @EnableEurekaServer
