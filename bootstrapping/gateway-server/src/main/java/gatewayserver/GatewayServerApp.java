@@ -36,4 +36,5 @@ public class GatewayServerApp {
             System.out.println(">> defined in Config Repo: spring.application.name=" + appName);
         };
     }
+
 }

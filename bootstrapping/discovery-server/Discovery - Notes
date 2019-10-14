@@ -8,7 +8,8 @@ Discovery
 ---------------------------------------------------------------------------------
 Eureka discovery server
 ---------------------------------------------------------------------------------
-- still Spring Boot v1x!!
+- Service-Discovery implementation
+- Load- balancing and Failover
 
 ---------------------------------------------------------------------------------
 crete bootstrap.properties

@@ -5,6 +5,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>bootstrapping</module>
+        <module>cloudstream-kafka</module>
     </modules>
 
     <parent>
@@ -21,9 +22,6 @@
 
     <properties>
         <java.version>1.8</java.version>
-        <spring-cloud.version>Greenwich.SR2</spring-cloud.version>
-        <eureka.version>1.4.6.RELEASE</eureka.version>
-        <zuul.version>1.4.6.RELEASE</zuul.version>
     </properties>
 
     <build>
@@ -46,41 +44,5 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <!-- Not Spring Boot 2 yet -->
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-eureka-server</artifactId>
-                <version>${eureka.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-eureka</artifactId>
-                <version>${eureka.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-starter-zuul</artifactId>
-                <version>${zuul.version}</version>
-            </dependency>
-
-            <!-- jasypt -->
-            <dependency>
-                <groupId>com.github.ulisesbocchio</groupId>
-                <artifactId>jasypt-spring-boot-starter</artifactId>
-                <version>2.1.1</version>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
 
 </project>

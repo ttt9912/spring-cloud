@@ -5,6 +5,7 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.config.server.EnableConfigServer;
+import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
 
@@ -23,10 +24,20 @@ import org.springframework.context.annotation.Bean;
  *
  * # secured
  * - curl localhost:8081/gateway-server.properties -u root:s3cr3t
+ * or
  * - curl http://root:s3cr3t@localhost:8081/gateway-server.properties
+ *
+ * ---------------------------------------------------------------------------------
+ * Change properties at runtime
+ * ---------------------------------------------------------------------------------
+ * TODO
+ * - RefreshScope
+ * - POST actuator/refresh
+ * - EnvironmentChangeEvent
  */
 @Slf4j
 @EnableConfigServer
+@EnableEurekaClient
 @SpringBootApplication
 public class ConfigServerApp {
 
