@@ -11,7 +11,7 @@ import ratingservice.data.RatingRepository;
 import java.util.List;
 
 @RestController
-@RequestMapping("/ratings")
+@RequestMapping("/ratings_json")
 public class RatingController {
     private final RatingRepository ratingRepository;
 

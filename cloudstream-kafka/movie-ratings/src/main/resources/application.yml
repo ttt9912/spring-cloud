@@ -1,0 +1,12 @@
+server.port: 14000
+
+spring.cloud.stream.bindings.input.destination: rating
+spring.cloud.stream.bindings.input.contentType: application/json
+
+spring.cloud.stream.bindings.output.destination: movie-rating
+spring.cloud.stream.bindings.output.contentType: application/json
+
+spring.cloud.stream.kafka.binder.autoCreateTopics: true
+spring.cloud.stream.kafka.binder.minPartitionCount: 3
+
+# spring.cloud.stream.kafka.binder.brokers: localhost:9092 # (default)

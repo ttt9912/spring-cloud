@@ -1,3 +1,36 @@
 TODO
-- Dataset
--
+- Monitoring, Micrometer
+- Tracing
+- Reactive web
+- NoSql (Redis)
+
+------------------------------------------------
+Spring Integration
+------------------------------------------------
+
+- MessageChannel        send(Message)
+- SubscribableChannel   subscribe(MessageHandler), unsubscribe(MessageHandler)
+- PollableChannel       Message<?> receive()
+- MessageHandler        handleMessage(Message<?>)
+
+- MessageSource<T>      Message<T> receive()
+- MessageSelector       boolean accept(Message)
+- MessageProducer       setOutputChannel
+
+- @Transformer          1->1
+- @Splitter             1->n
+- @Aggregator           n->1
+- @Service activator    1->void
+- @Router
+- @Filter
+
+------------------------------------------------
+Cloud Stream
+------------------------------------------------
+Bindable Channels (MessageSource...)
+- Source    OUTPUT (MessageChannel)
+- Processor INPUT,OUTPUT (extends Source, Sink)
+- Sink      INPUT (SubscribableChannel)
+
+
+
