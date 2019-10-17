@@ -1,0 +1,8 @@
+# App
+server.port: 15500
+spring.application.name: book-provider
+
+# Discovery (Zookeeper)
+spring.cloud.zookeeper.discovery.enabled: true
+# spring.cloud.zookeeper.connect-string: localhost:2181 (default localhost:2181)
+

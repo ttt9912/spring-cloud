@@ -6,6 +6,7 @@
     <modules>
         <module>bootstrapping</module>
         <module>cloudstream-kafka</module>
+        <module>cloud-zookeeper</module>
     </modules>
 
     <parent>
