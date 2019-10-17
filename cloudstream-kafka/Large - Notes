@@ -2,7 +2,7 @@ TODO
 - Monitoring, Micrometer
 - Tracing
 - Reactive web
-- NoSql (Redis)
+
 
 ------------------------------------------------
 Spring Integration
@@ -21,8 +21,8 @@ Spring Integration
 - @Splitter             1->n
 - @Aggregator           n->1
 - @Service activator    1->void
-- @Router
-- @Filter
+- @Router               in->contitional out
+- @Filter               1->boolean
 
 ------------------------------------------------
 Cloud Stream
@@ -33,4 +33,10 @@ Bindable Channels (MessageSource...)
 - Sink      INPUT (SubscribableChannel)
 
 
+------------------------------------------------
+Spring Cloud Data Flow
+------------------------------------------------
+create data pipelines in two flavors:
+- Long-lived real-time stream applications using Spring Cloud Stream
+- Short-lived batched task applications using Spring Cloud Task
 

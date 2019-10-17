@@ -15,6 +15,7 @@
     <modules>
         <module>ratings</module>
         <module>movie-ratings</module>
+        <module>movies</module>
     </modules>
     <properties>
         <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>

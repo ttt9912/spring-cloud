@@ -31,7 +31,8 @@ public class RatingImportService {
 
     private Rating createRating(final RatingImportDto ratingImportDto) {
         return new Rating(LocalDateTime.now(),
-                ratingImportDto.getMovieId(), ratingImportDto.getRating());
+                String.valueOf(ratingImportDto.getMovieId()),
+                ratingImportDto.getRating());
     }
 
     private List<RatingImportDto> readFile(final File file) {

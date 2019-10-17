@@ -12,7 +12,7 @@ import java.time.format.DateTimeFormatter;
 @NoArgsConstructor
 public class Rating { // extends Event
     private LocalDateTime timestamp; // key
-    private Long movieId;
+    private String movieId;
     private Double rating;
 
     public String createKey() {

@@ -10,3 +10,7 @@ spring.cloud.stream.kafka.binder.autoCreateTopics: true
 spring.cloud.stream.kafka.binder.minPartitionCount: 3
 
 # spring.cloud.stream.kafka.binder.brokers: localhost:9092 # (default)
+
+# Metrics
+management.endpoints.web.exposure.include: "*"
+management.endpoint.health.show-details: always

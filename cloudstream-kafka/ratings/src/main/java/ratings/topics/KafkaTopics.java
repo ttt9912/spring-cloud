@@ -1,12 +1,19 @@
 package ratings.topics;
 
-/*
+
+import org.apache.kafka.clients.admin.AdminClientConfig;
+import org.apache.kafka.clients.admin.NewTopic;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.kafka.core.KafkaAdmin;
+
+import java.util.HashMap;
+import java.util.Map;
+
 @Configuration
 public class KafkaTopics {
     public static final String RATING_TOPIC = "rating";
-
-    @Value("${kafka.host}")
-    private String bootstrapAddress;
+    private final String bootstrapAddress = "localhost:9092";
 
     @Bean
     public KafkaAdmin kafkaAdmin() {
@@ -20,4 +27,3 @@ public class KafkaTopics {
         return new NewTopic(RATING_TOPIC, 3, (short) 1);
     }
 }
-*/

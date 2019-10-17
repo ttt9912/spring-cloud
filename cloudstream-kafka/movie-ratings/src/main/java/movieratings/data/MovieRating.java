@@ -9,5 +9,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class MovieRating {
     private String title;
-    private Double rating;
+    private Double ratingAvg;
+    private Integer ratingCount;
 }

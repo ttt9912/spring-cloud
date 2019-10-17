@@ -1,13 +1,20 @@
 package movieratings;
 
+import io.micrometer.core.instrument.MeterRegistry;
 import lombok.extern.slf4j.Slf4j;
 import movieratings.business.MovieRatingService;
+import movieratings.business.RatingService;
 import movieratings.data.MovieRating;
 import movieratings.data.Rating;
 import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Processor;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.integration.annotation.Filter;
+import org.springframework.integration.annotation.Transformer;
+import org.springframework.integration.channel.DirectChannel;
+import org.springframework.messaging.MessageChannel;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 
@@ -15,21 +22,45 @@ import org.springframework.messaging.handler.annotation.SendTo;
 @Configuration
 public class IntegrationConfig {
     private final MovieRatingService movieRatingService;
+    private final RatingService ratingService;
+    private final MeterRegistry meterRegistry;
 
-    public IntegrationConfig(final MovieRatingService movieRatingService) {
+    public IntegrationConfig(final MovieRatingService movieRatingService, final RatingService ratingService, final MeterRegistry meterRegistry) {
         this.movieRatingService = movieRatingService;
+        this.ratingService = ratingService;
+        this.meterRegistry = meterRegistry;
+    }
+
+    @Bean
+    public MessageChannel save() {
+        return new DirectChannel();
+    }
+
+    @Bean
+    public MessageChannel filter() {
+        return new DirectChannel();
     }
 
     @EnableBinding(Processor.class)
     class RatingProcessor {
     }
 
-    @StreamListener(Processor.INPUT) // Processor.INPUT -> save -> process TODO
-    @SendTo(Processor.OUTPUT)
-    public MovieRating process(@Payload final Rating rating) { // @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) byte[] key TODO
-        log.info(">> value={}", rating);
-        // return Message<Rating> with headers?
-        return movieRatingService.createMovieRating(rating);
+    @StreamListener(Processor.INPUT)
+    @SendTo("save")
+    public Rating save(@Payload final Rating rating) {// @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) byte[] key TODO
+        meterRegistry.counter("rating_consumed").increment();
+        ratingService.save(rating);
+        return rating;
+    }
+
+    @Transformer(inputChannel = "save", outputChannel = "filter")
+    public MovieRating process(final Rating rating) {
+        return movieRatingService.createMovieRating(rating.getMovieId());
+    }
+
+    @Filter(inputChannel = "filter", outputChannel = Processor.OUTPUT)
+    public boolean filter(final MovieRating rating) {
+        return rating.getTitle() != null;
     }
 
 }

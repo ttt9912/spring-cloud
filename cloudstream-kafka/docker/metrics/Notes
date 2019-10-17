@@ -1,0 +1,11 @@
+ ---------------------------------------------------------------------------------
+ Run
+ ---------------------------------------------------------------------------------
+ - docker-compose up
+ - management.endpoints.web.exposure.include=*
+ - start app
+ - Prometheus setup, connect to actuator (prometheus.yml)
+ - Grafana Setup (connect to Prometheus)
+
+ - Prometheus:  http://localhost:9090/targets
+ - Grafana:     http://localhost:3000           (admin/admin)

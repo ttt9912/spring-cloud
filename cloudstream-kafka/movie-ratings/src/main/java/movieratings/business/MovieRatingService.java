@@ -2,22 +2,30 @@ package movieratings.business;
 
 import movieratings.data.MovieRating;
 import movieratings.data.Rating;
+import movieratings.movie.MovieService;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class MovieRatingService {
+    private final MovieService movieService;
+    private final RatingService ratingService;
 
-    public MovieRating createMovieRating(final Rating rating) {
-        return new MovieRating(getTitle(rating.getMovieId()), calculateAverage(rating.getRating()));
+    public MovieRatingService(final MovieService movieService, final RatingService ratingService) {
+        this.movieService = movieService;
+        this.ratingService = ratingService;
     }
 
-    private Double calculateAverage(final Double rating) {
-        // cache Ratings TODO
-        return rating;
+    public MovieRating createMovieRating(final String movieId) {
+        final String movieName = movieService.findMovieName(movieId);
+        final List<Rating> ratings = ratingService.findByMovie(movieId);
+        return new MovieRating(movieName, calculateRatingAverage(ratings), ratings.size());
     }
 
-    private String getTitle(final Long movieId) {
-        // retrieve Movie metadata TODO
-        return "Gladiator";
+    private Double calculateRatingAverage(final List<Rating> ratings) {
+        return ratings.stream()
+                .collect(Collectors.averagingDouble(Rating::getRating));
     }
 }

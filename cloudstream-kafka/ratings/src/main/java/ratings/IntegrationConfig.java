@@ -28,8 +28,7 @@ public class IntegrationConfig {
     }
 
     @EnableBinding(Source.class)
-    class RatingSourceOutput {
-        // Kafka adapter, Source.OUTPUT = topic
+    class RatingSourceOutput { // Kafka adapter, Source.OUTPUT = topic
     }
 
     @MessageEndpoint
@@ -42,7 +41,6 @@ public class IntegrationConfig {
 
         @Splitter(inputChannel = "transform", outputChannel = Source.OUTPUT)
         public List<Rating> process(final File file) {
-            // return Message<Rating> with headers?
             return ratingImportService.importRatings(file);
         }
     }
