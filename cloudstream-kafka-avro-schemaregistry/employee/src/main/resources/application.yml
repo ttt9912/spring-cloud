@@ -1,0 +1,34 @@
+spring:
+  cloud:
+    stream:
+
+      bindings:
+        input:
+          destination: employee
+          content-type: application/*+avro
+          group: employee-group # consumer group
+          concurrency: 3
+        output:
+          destination: employee
+          content-type: application/*+avro
+
+      # useNativeEncoding - forces Spring Cloud Stream to
+      # delegate serialization to the provided classes
+      default:
+        producer:
+          useNativeEncoding: true
+        consumer:
+          useNativeEncoding: true
+
+      # provide native settings properties for Kafka
+      kafka:
+        binder:
+          producer-properties:
+            schema.registry.url: http://localhost:8081
+            key.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+            value.serializer: io.confluent.kafka.serializers.KafkaAvroSerializer
+          consumer-properties:
+            schema.registry.url: http://localhost:8081
+            key.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            value.deserializer: io.confluent.kafka.serializers.KafkaAvroDeserializer
+            specific.avro.reader: true

@@ -1,0 +1,43 @@
+---------------------------------------------------------------------------------
+Avro
+---------------------------------------------------------------------------------
+Apache Avro is a data serialization system.
+
+- uses a JSON structure to define the schema, providing for serialization between
+  bytes and structured data
+
+Conventionally, Kafka is used with the Avro message format, supported by a schema
+registry (Confluent Schema Registry)
+
+---------------------------------------------------------------------------------
+Confluent Schema Registry
+---------------------------------------------------------------------------------
+- Kafka represents all data as bytes
+
+It's common to use an external schema and serialize and deserialize into bytes
+according to that schema.
+
+Rather than supply a copy of that schema with each message, which would be an
+expensive overhead, it's also common to keep the schema in a registry and supply
+just an id with each message.
+
+Confluent Schema Registry provides an easy way to store, retrieve and manage
+schemas. It exposes several useful RESTful APIs.
+
+---------------------------------------------------------------------------------
+Producer
+---------------------------------------------------------------------------------
+- knows the schema it's producing with
+
+- consults the registry to establish the correct ID to use when sending a message
+
+---------------------------------------------------------------------------------
+Consumer
+---------------------------------------------------------------------------------
+- should be able to either consume data in ANY format or should have a specific
+  schema it prefers to read in
+
+- uses the registry to fetch the sender's schema
+
+When the consumer knows both the sender's schema and its own desired message
+format, the Avro library can convert the data into the consumer's desired format.

@@ -1,0 +1,15 @@
+{
+    "type": "record",
+    "name": "EmployeeKey",
+    "namespace": "employee.avro.schema",
+    "fields": [
+    	 {
+    		"name": "id",
+    		"type": "int"
+    	},
+    	{
+    		"name": "departmentName",
+    		"type": "string"
+    	}
+    ]
+}

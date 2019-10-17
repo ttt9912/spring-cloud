@@ -1,0 +1,11 @@
+---------------------------------------------------------------------------------
+One Function per app
+---------------------------------------------------------------------------------
+- AWS can invoke only one Spring Cloud Function per application
+- even if there are more in the application
+
+specify FUNCTION_NAME environment variable in AWS console
+
+---------------------------------------------------------------------------------
+Upload Function
+---------------------------------------------------------------------------------

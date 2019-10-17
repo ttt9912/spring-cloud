@@ -1,0 +1,21 @@
+
+--- Produce ---
+
+1) Producer registers employee schema with the schema registry to get a schema
+   version ID, this either creates a new ID or reuses the existing one for that
+   exact schema
+
+2) Avro serializes the Employee object using the schema
+
+3) Spring Cloud puts the schema-id in the message headers
+
+4) The message is published on the topic
+
+--- Consume ---
+
+5) When the message comes to the consumer, it reads the schema-id from the header
+
+6) Consumer uses schema-id to get the Employee schema from the registry
+
+7) Consumer finds a local class that could represent that object and deserializes
+   the message into it
