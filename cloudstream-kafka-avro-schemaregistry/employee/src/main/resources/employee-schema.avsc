@@ -14,5 +14,9 @@
     {
         "name": "lastName",
         "type": "string"
+    },
+    {
+        "name": "department",
+        "type": "string"
     }]
 }

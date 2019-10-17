@@ -1,12 +1,4 @@
 ---------------------------------------------------------------------------------
-Installation
----------------------------------------------------------------------------------
-1) copied docker-compose.yml from
-    https://github.com/confluentinc/cp-docker-images/blob/master/examples/kafka-single-node/docker-compose.yml
-
-2) docker-compose up
-
----------------------------------------------------------------------------------
 Do Stuff in Kafka
 ---------------------------------------------------------------------------------
 https://kafka.apache.org/quickstart
