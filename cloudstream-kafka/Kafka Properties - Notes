@@ -1,0 +1,36 @@
+- Kafka os configured via application.yml properties
+- Properties are printed at startup
+
+---------------------------------------------------------------------------
+Broker Configs
+---------------------------------------------------------------------------
+-
+- use properties from https://kafka.apache.org/documentation/ (Kap. 3.1)
+
+---------------------------------------------------------------------------
+# Topic Configs
+---------------------------------------------------------------------------
+-
+- use properties from https://kafka.apache.org/documentation/ (Kap. 3.2)
+
+---------------------------------------------------------------------------
+# Producer Configs
+---------------------------------------------------------------------------
+- spring.cloud.stream.kafka.binder.producerProperties.<key>: <value>
+- use properties from https://kafka.apache.org/documentation/ (Kap. 3.3)
+
+---------------------------------------------------------------------------
+# Consumer Configs
+---------------------------------------------------------------------------
+- spring.cloud.stream.kafka.binder.consumerProperties.<key>: <value>
+- use properties from https://kafka.apache.org/documentation/ (Kap. 3.4)
+
+---------------------------------------------------------------------------
+# Channel producer/consumer configs
+---------------------------------------------------------------------------
+- autoCommitOffset etc.
+- spring.cloud.stream.kafka.bindings.<channelName>.consumer.<key>: <value>
+- set property for all channels:
+    spring.cloud.stream.default.<property>: <value>
+- use properties from https://github.com/spring-cloud/spring-cloud-stream-binder-kafka
+

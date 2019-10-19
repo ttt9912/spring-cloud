@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Bean;
  * @EnableEurekaClient - registers the app to the Eureka Server (discovery-server)
  * and lets it use its services
  *
- * Runs on localhost:8083
+ * Runs on localhost:15100
  *
  * Browser => http://localhost:8080/book-service/books
  * - Gateway server will route /book-service/* to BookService app

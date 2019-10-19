@@ -12,12 +12,17 @@
     <groupId>ch.ttt</groupId>
     <artifactId>reverse-string-function</artifactId>
 
+    <properties>
+        <function-web.version>2.1.1.RELEASE</function-web.version>
+    </properties>
+
     <dependencies>
+
         <!-- local adapter to run our function locally -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-function-web</artifactId>
-            <version>1.0.1.RELEASE</version>
+            <version>${function-web.version}</version>
         </dependency>
 
         <!-- aws adapter -->
@@ -30,14 +35,12 @@
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-events</artifactId>
-            <version>2.0.2</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-core</artifactId>
-            <version>1.1.0</version>
-            <scope>provided</scope>
+            <!--<scope>provided</scope>-->
         </dependency>
     </dependencies>
 
@@ -71,7 +74,7 @@
                     <dependency>
                         <groupId>org.springframework.boot.experimental</groupId>
                         <artifactId>spring-boot-thin-layout</artifactId>
-                        <version>1.0.10.RELEASE</version>
+                        <version>1.0.22.RELEASE</version>
                     </dependency>
                 </dependencies>
             </plugin>

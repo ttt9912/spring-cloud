@@ -28,6 +28,11 @@ import java.util.function.Function;
  * ---------------------------------------------------------------------------------
  * create Tests in the AWS Management Console
  *
+ * ---------------------------------------------------------------------------------
+ * Test local
+ * ---------------------------------------------------------------------------------
+ * curl localhost:8080/reverseString -H "Content-Type: text/plain" -d "Baeldung User"
+ *
  */
 @SpringBootApplication
 public class ReverseStringLambdaApp {

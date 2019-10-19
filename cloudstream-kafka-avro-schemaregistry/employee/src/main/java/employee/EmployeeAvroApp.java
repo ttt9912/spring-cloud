@@ -41,7 +41,7 @@ import org.springframework.cloud.stream.schema.client.EnableSchemaRegistryClient
 @EnableSchemaRegistryClient
 public class EmployeeAvroApp {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(EmployeeAvroApp.class, args);
     }
 }

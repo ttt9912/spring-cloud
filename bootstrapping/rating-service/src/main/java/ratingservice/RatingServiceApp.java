@@ -5,7 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /*
- * Runs on localhost:8084
+ * Runs on localhost:15300
  *
  * Browser => http://localhost:8080/rating-service/ratings/all
  * - Gateway server

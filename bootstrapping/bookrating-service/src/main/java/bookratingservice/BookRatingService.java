@@ -9,6 +9,8 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 import org.springframework.context.annotation.Bean;
 
 /*
+ * Runs on localhost:15200
+ *
  * consume BookService & RatingService
  *
  * TODO: feign, hystrix, etc... projects

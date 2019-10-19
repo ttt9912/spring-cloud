@@ -42,7 +42,6 @@
         </dependency>
     </dependencies>
 
-
     <!-- Confluent's Serializer is in their repo -->
     <repositories>
         <repository>

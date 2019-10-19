@@ -22,6 +22,11 @@ public class RatingImportService {
         this.objectMapper = objectMapper;
     }
 
+    /*
+    public Flux<Rating> importRatingsFlux(final File file) {
+    }
+    */
+
     public List<Rating> importRatings(final File file) {
         log.info(">> reading file {}", file.getAbsolutePath());
         return readFile(file).stream()

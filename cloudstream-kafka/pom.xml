@@ -18,4 +18,17 @@
         <module>movies</module>
     </modules>
 
+    <!-- TODO: import spring-cloudstream-dependencies instead?
+    <properties>
+        <spring-cloud-stream.version>2.2.1.RELEASE</spring-cloud-stream.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-stream</artifactId>
+            <version>${spring-cloud-stream.version}</version>
+        </dependency>
+    </dependencies>-->
+
 </project>

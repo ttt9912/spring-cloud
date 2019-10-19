@@ -12,12 +12,12 @@
     <groupId>ch.ttt</groupId>
     <artifactId>local-functions</artifactId>
 
+
     <dependencies>
         <!-- local adapter to run our function locally -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-function-web</artifactId>
-            <version>1.0.1.RELEASE</version>
         </dependency>
     </dependencies>
 

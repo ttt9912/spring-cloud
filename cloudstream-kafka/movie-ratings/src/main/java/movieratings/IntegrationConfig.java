@@ -14,7 +14,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.integration.annotation.Filter;
 import org.springframework.integration.annotation.Transformer;
 import org.springframework.integration.channel.DirectChannel;
+import org.springframework.kafka.support.KafkaHeaders;
 import org.springframework.messaging.MessageChannel;
+import org.springframework.messaging.handler.annotation.Header;
 import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 
@@ -47,9 +49,11 @@ public class IntegrationConfig {
 
     @StreamListener(Processor.INPUT)
     @SendTo("save")
-    public Rating save(@Payload final Rating rating) {// @Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) byte[] key TODO
+    public Rating save(@Header(KafkaHeaders.RECEIVED_MESSAGE_KEY) final String key,
+                       @Payload final Rating rating) {
         meterRegistry.counter("rating_consumed").increment();
         ratingService.save(rating);
+        log.info(">> received key={}", key);
         return rating;
     }
 

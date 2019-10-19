@@ -20,12 +20,12 @@ import org.springframework.context.annotation.Bean;
  * /{application}-{profile}.{properties|yml}
  * /{branch}/{application}-{profile}.{properties|yml}
  *
- * - curl localhost:8081/gateway-server.properties
+ * - curl localhost:12000/gateway-server.properties
  *
  * # secured
- * - curl localhost:8081/gateway-server.properties -u root:s3cr3t
+ * - curl localhost:12000/gateway-server.properties -u root:s3cr3t
  * or
- * - curl http://root:s3cr3t@localhost:8081/gateway-server.properties
+ * - curl http://root:s3cr3t@localhost:12000/gateway-server.properties
  *
  * ---------------------------------------------------------------------------------
  * Change properties at runtime
@@ -41,7 +41,7 @@ import org.springframework.context.annotation.Bean;
 @SpringBootApplication
 public class ConfigServerApp {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(ConfigServerApp.class, args);
     }
 

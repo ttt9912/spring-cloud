@@ -9,6 +9,10 @@ spring.cloud.stream.bindings.output.contentType: application/json
 spring.cloud.stream.kafka.binder.autoCreateTopics: true
 spring.cloud.stream.kafka.binder.minPartitionCount: 3
 
+# Consumer Properties
+spring.cloud.stream.kafka.binder.consumerProperties:
+  key.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
 # spring.cloud.stream.kafka.binder.brokers: localhost:9092 # (default)
 
 # Metrics
