@@ -1,0 +1,10 @@
+------------------------------------------------
+Kafka Serializer/Deserializer
+------------------------------------------------
+                        (defaults)
+key.serializer          ByteArraySerializer
+value.serializer        ByteArraySerializer
+key.deserializer        ByteArrayDeserializer
+value.deserializer      ByteArrayDeserializer
+
+- printed out at startup

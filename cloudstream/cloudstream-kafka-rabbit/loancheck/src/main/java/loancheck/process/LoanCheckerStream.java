@@ -22,6 +22,7 @@ public class LoanCheckerStream {
 
     @StreamListener(LoanProcessor.LOAN_IN)
     public void checkAndSortLoans(final Loan loan) {
+        // alternative: @Router
         if (loan.getAmount() > MAX_AMOUNT) {
             log.info(">> DECLINED Loan {}", loan);
             final CheckedLoan checkedLoan = new CheckedLoan(loan.getUuid(), LoanStatus.DECLINED);
@@ -32,7 +33,6 @@ public class LoanCheckerStream {
             loanProcessor.approved().send(message(loan));
         }
     }
-
 
     private static <T> Message<T> message(final T val) {
         return MessageBuilder.withPayload(val).build();

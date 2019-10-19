@@ -1,0 +1,34 @@
+------------------------------------------------
+Cloudsrtream Properties
+------------------------------------------------
+- independent from Kafka/Rabbit
+
+- https://docs.spring.io/spring-cloud-stream/docs/Brooklyn.RELEASE/reference/html/_configuration_options.html
+
+# top level properties
+spring.cloud.stream.<key>: <value>
+- instanceCount
+- ...
+
+# binding properties
+spring.cloud.stream.bindings.<channelName>.<key>: <value>
+- destination
+- group
+- contentType
+- ...
+
+- set for all channels
+spring.cloud.stream.default.<key>: <value>
+
+# consumer properties
+spring.cloud.stream.bindings.<channelName>.consumer.<key>: <value>
+- concurrency
+- partitioned
+- ...
+
+# producer properties
+spring.cloud.stream.bindings.<channelName>.producer.<key>: <value>
+- partitionKeyExpression
+- partitionKeyExtractorClass
+- partitionSelectorExpression
+- ...

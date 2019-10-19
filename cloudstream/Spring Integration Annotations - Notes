@@ -1,0 +1,19 @@
+------------------------------------------------
+Spring Integration
+------------------------------------------------
+
+- MessageChannel        send(Message)
+- SubscribableChannel   subscribe(MessageHandler), unsubscribe(MessageHandler)
+- PollableChannel       Message<?> receive()
+- MessageHandler        handleMessage(Message<?>)
+
+- MessageSource<T>      Message<T> receive()
+- MessageSelector       boolean accept(Message)
+- MessageProducer       setOutputChannel
+
+- @Transformer          1->1
+- @Splitter             1->n
+- @Aggregator           n->1
+- @Service activator    1->void
+- @Router               in->contitional out
+- @Filter               1->boolean

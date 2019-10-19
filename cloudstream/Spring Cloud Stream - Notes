@@ -1,0 +1,19 @@
+------------------------------------------------
+Cloud Stream
+------------------------------------------------
+Bindable Channels (MessageSource...)
+- Source    OUTPUT (MessageChannel)
+- Processor INPUT,OUTPUT (extends Source, Sink)
+- Sink      INPUT (SubscribableChannel)
+
+------------------------------------------------
+Channel Adapters Overview
+------------------------------------------------
+https://docs.spring.io/spring-integration/docs/5.1.0.M1/reference/html/endpoint-summary.html
+
+------------------------------------------------
+Spring Cloud Data Flow
+------------------------------------------------
+create data pipelines in two flavors:
+- Long-lived real-time stream applications using Spring Cloud Stream
+- Short-lived batched task applications using Spring Cloud Task

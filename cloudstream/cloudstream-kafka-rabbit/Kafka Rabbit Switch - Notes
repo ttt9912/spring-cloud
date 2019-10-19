@@ -1,4 +1,13 @@
 https://spring.io/blog/2019/10/15/simple-event-driven-microservices-with-spring-cloud-stream
 
-Create 1 CloudStream Application and bind Kafka or Rabbit
-with a maven property
+-----------------------------------------------------------------------------
+Switch between Brokers
+-----------------------------------------------------------------------------
+Create 1 CloudStream Application and bind Kafka or Rabbit with a maven
+property
+
+-----------------------------------------------------------------------------
+Spring Cloud Function Support
+-----------------------------------------------------------------------------
+Defined Supplier bean is automatically called every second and written
+to the "output" MessageChannel

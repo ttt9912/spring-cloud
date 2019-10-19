@@ -52,14 +52,11 @@ public class LoanSourceApp {
      *      => spring.integration.poller.fixed-delay
      *
      * - sends result to default MessageChannel "output"
-     *      => TODO
+     *      => spring.cloud.stream.bindings.output.destination
      *
      * - if there is more than 1 Supplier bean, define bean
      *   name to be bound to binding desitnations with:
      *      => spring.cloud.function.definition
-     *
-     *
-     *
      */
     @Bean
     public Supplier<Loan> supplyLoan() {
