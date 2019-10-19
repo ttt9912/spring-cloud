@@ -11,3 +11,8 @@ Spring Cloud Function Support
 -----------------------------------------------------------------------------
 Defined Supplier bean is automatically called every second and written
 to the "output" MessageChannel
+
+-----------------------------------------------------------------------------
+Kafdrop Kafka UI
+-----------------------------------------------------------------------------
+http://localhost:9000/
