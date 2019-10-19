@@ -15,7 +15,7 @@ import java.io.IOException;
 @SpringBootApplication
 public class RatingSourceApp {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(RatingSourceApp.class, args);
     }
 

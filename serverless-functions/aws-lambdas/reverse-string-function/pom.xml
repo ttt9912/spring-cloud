@@ -13,33 +13,35 @@
     <artifactId>reverse-string-function</artifactId>
 
     <properties>
-        <function-web.version>2.1.1.RELEASE</function-web.version>
+        <aws-lambda-java-events.version>2.2.7</aws-lambda-java-events.version>
+        <aws-lambda-java-core.version>1.2.0</aws-lambda-java-core.version>
+        <adapter-aws.version>2.0.2.RELEASE</adapter-aws.version>
     </properties>
 
     <dependencies>
 
+        <!-- spring-cloud -->
         <!-- local adapter to run our function locally -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-function-web</artifactId>
-            <version>${function-web.version}</version>
         </dependency>
-
-        <!-- aws adapter -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-function-adapter-aws</artifactId>
         </dependency>
 
-        <!-- aws lambdas -->
+        <!-- aws -->
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-events</artifactId>
+            <version>2.2.7</version>
             <!--<scope>provided</scope>-->
         </dependency>
         <dependency>
             <groupId>com.amazonaws</groupId>
             <artifactId>aws-lambda-java-core</artifactId>
+            <version>1.2.0</version>
             <!--<scope>provided</scope>-->
         </dependency>
     </dependencies>

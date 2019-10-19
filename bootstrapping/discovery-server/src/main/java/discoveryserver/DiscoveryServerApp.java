@@ -18,7 +18,6 @@ public class DiscoveryServerApp {
         SpringApplication.run(DiscoveryServerApp.class, args);
     }
 
-
     @Bean
     CommandLineRunner ctx(
             @Value("${spring.application.name}") String appName) {

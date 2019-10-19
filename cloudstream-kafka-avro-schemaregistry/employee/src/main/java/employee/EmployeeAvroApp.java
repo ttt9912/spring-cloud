@@ -44,4 +44,6 @@ public class EmployeeAvroApp {
     public static void main(final String[] args) {
         SpringApplication.run(EmployeeAvroApp.class, args);
     }
+
+
 }

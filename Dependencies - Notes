@@ -1,0 +1,8 @@
+concrete module
+- define dependency
+
+parent
+- define Versions in dependencyManagement
+
+
+no dependencyManagement or dependencies in 'middle' modules
