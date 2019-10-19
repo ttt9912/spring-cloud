@@ -5,10 +5,9 @@
     <packaging>pom</packaging>
     <modules>
         <module>bootstrapping</module>
-        <module>cloudstream-kafka</module>
         <module>cloud-zookeeper</module>
         <module>serverless-functions</module>
-        <module>cloudstream-kafka-avro-schemaregistry</module>
+        <module>cloudstream</module>
     </modules>
 
     <parent>
@@ -39,6 +38,8 @@
 
     <dependencyManagement>
         <dependencies>
+
+            <!-- TODO set to 2.2 when available -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -47,6 +48,26 @@
                 <scope>import</scope>
             </dependency>
 
+            <!-- cloud-stream 2.2 until cloud is not 2.2 TODO remove -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-stream</artifactId>
+                <version>2.2.1.RELEASE</version>
+            </dependency>
+
+            <!-- modules that are not 2.2 yet TODO remove -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-function-context</artifactId>
+                <version>2.1.1.RELEASE</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-function-core</artifactId>
+                <version>2.1.1.RELEASE</version>
+            </dependency>
+
+            <!-- non spring managed -->
             <dependency>
                 <groupId>io.zipkin.java</groupId>
                 <artifactId>zipkin-server</artifactId>
