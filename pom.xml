@@ -48,7 +48,7 @@
                 <scope>import</scope>
             </dependency>
 
-            <!-- cloud-stream 2.2 until cloud is not 2.2 TODO remove -->
+            <!-- cloud-stream 2.2 until cloud is 2.2 TODO remove -->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-stream</artifactId>
