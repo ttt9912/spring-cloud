@@ -11,6 +11,11 @@
 
     <groupId>ch.ttt</groupId>
     <artifactId>functional-reactive</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>reactive-uppercase-function</module>
+        <module>reactive-function-arity</module>
+    </modules>
 
     <dependencies>
         <!-- spring-cloud -->

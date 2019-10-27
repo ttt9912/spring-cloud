@@ -1,4 +1,4 @@
-package stringsource;
+package stringsupplier;
 
 import java.util.List;
 

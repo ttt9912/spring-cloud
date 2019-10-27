@@ -1,18 +1,18 @@
-package uppercasefunction;
+package uppercaseconsumer;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.function.Function;
+import java.util.function.Consumer;
 
 /*
  * -------------------------------------------
- * Processor
+ * Sink
  * -------------------------------------------
  * - in terms of spring integration
- * - "input" & "output" channel
+ * - "input" channel
  *
  * -------------------------------------------
  * Kafdrop Kafka UI
@@ -21,24 +21,20 @@ import java.util.function.Function;
  */
 @Slf4j
 @SpringBootApplication
-public class ImperativeUppercaseFunction {
+public class ImperativeUppercaseConsumerApp {
 
     public static void main(final String[] args) {
-        SpringApplication.run(ImperativeUppercaseFunction.class, args);
+        SpringApplication.run(ImperativeUppercaseConsumerApp.class, args);
     }
 
     /*
      * -------------------------------------------
-     * Function
+     * Consumer
      * -------------------------------------------
-     * Bound to "input" and "output" channels
+     * Bound to "input" channel
      */
     @Bean
-    public Function<String, String> uppercase() {
-        return string -> {
-            final String upperCase = string.toUpperCase();
-            log.info(">> uppercase - {}", upperCase);
-            return upperCase;
-        };
+    public Consumer<String> uppercaseSink() {
+        return string -> log.info(">> uppercaseSink - {}", string);
     }
 }
