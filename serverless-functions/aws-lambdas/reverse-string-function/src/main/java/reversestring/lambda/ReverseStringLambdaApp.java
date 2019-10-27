@@ -13,17 +13,6 @@ import java.util.function.Function;
  * https://console.aws.amazon.com/lambda/home?region=us-east-1#/functions
  *
  * ---------------------------------------------------------------------------------
- * Upload Function with AWS Management Console
- * ---------------------------------------------------------------------------------
- * open AWS Management Console - Lambdas
- *
- * 1) create new function with Java8 runtime
- * 2) build jar wih maven
- * 3) upload *-aws.jar via button
- * 4) Function code -> Handler: reversestring.lambda.MyStringHandlers
- * 5) Environment Variables: set FUNCTION_NAME=reverseString
- *
- * ---------------------------------------------------------------------------------
  * Test
  * ---------------------------------------------------------------------------------
  * create Tests in the AWS Management Console
@@ -37,7 +26,7 @@ import java.util.function.Function;
 @SpringBootApplication
 public class ReverseStringLambdaApp {
 
-    public static void main(String[] args) {
+    public static void main(final String[] args) {
         SpringApplication.run(ReverseStringLambdaApp.class, args);
     }
 

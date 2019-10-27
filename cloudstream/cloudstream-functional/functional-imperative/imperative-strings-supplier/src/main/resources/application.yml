@@ -1,0 +1,11 @@
+server.port: 18053
+
+# set rate of message production (1000 = 1s)
+# spring.integration.poller.fixed-delay: 1000
+
+# define which function method will be triggered if there are multiple
+# spring.cloud.function.definition: stringSource
+
+# set topic of output channel (default topic = 'output')
+# topic is auto-created
+spring.cloud.stream.bindings.output.destination: strings

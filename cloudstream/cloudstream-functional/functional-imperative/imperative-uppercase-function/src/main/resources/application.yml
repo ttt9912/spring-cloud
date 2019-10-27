@@ -1,0 +1,6 @@
+server.port: 18052
+
+# set topics of input/output channels
+# topic is auto-created
+spring.cloud.stream.bindings.input.destination: strings
+spring.cloud.stream.bindings.output.destination: uppercase

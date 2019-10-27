@@ -6,7 +6,6 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
-import java.util.UUID;
 import java.util.function.Supplier;
 
 /*
@@ -41,27 +40,14 @@ public class LoanSourceApp {
     }
 
     /*
-     * -------------------------------------------
      * Spring Cloud Function Support
-     * -------------------------------------------
-     * https://cloud.spring.io/spring-cloud-stream/reference/html/spring-cloud-stream.html#spring_cloud_function
-     *
-     * @Bean of type Supplier<Loan>
-     *
      * - periodically triggered every 1s
-     *      => spring.integration.poller.fixed-delay
-     *
      * - sends result to default MessageChannel "output"
-     *      => spring.cloud.stream.bindings.output.destination
-     *
-     * - if there is more than 1 Supplier bean, define bean
-     *   name to be bound to binding desitnations with:
-     *      => spring.cloud.function.definition
      */
     @Bean
     public Supplier<Loan> supplyLoan() {
         return () -> {
-            final Loan loan = new Loan(UUID.randomUUID().toString(), "Ben", 10000L);
+            final Loan loan = StaticLoanData.get();
             log.info(">> Loan created {}", loan);
             return loan;
         };

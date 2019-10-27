@@ -4,8 +4,15 @@ One Function per app
 - AWS can invoke only one Spring Cloud Function per application
 - even if there are more in the application
 
-specify FUNCTION_NAME environment variable in AWS console
+---------------------------------------------------------------------------------
+Upload Function with AWS Management Console
+---------------------------------------------------------------------------------
+open AWS Management Console - Lambdas
 
----------------------------------------------------------------------------------
-Upload Function
----------------------------------------------------------------------------------
+ 1) create new function with Java8 runtime
+ 2) build jar wih maven
+ 3) upload *-aws.jar via button
+ 4) Function code -> Handler: reversestring.lambda.MyStringHandlers
+ 5) Environment Variables
+      FUNCTION_NAME=reverseString
+      MAIN_CLASS=reversestring.lambda.ReverseStringLambdaApp
