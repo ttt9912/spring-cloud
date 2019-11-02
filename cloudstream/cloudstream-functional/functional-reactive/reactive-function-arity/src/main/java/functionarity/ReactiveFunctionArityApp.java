@@ -9,6 +9,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * -------------------------------------------
  * Functions with more than 1 inputs/outputs
  *
+ * TODO
+ *
  * -------------------------------------------
  * Kafdrop Kafka UI
  * -------------------------------------------
@@ -24,6 +26,6 @@ public class ReactiveFunctionArityApp {
     /*
     @Bean
     public Function<Flux<Integer>, Tuple2<Flux<String>, Flux<String>>> organise() {
-
+        TODO wip
     }*/
 }
