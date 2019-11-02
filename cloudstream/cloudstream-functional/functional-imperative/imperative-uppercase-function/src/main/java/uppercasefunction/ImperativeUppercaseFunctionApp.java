@@ -8,11 +8,6 @@ import org.springframework.context.annotation.Bean;
 import java.util.function.Function;
 
 /*
- * -------------------------------------------
- * Processor
- * -------------------------------------------
- * - in terms of spring integration
- * - "input" & "output" channel
  *
  * -------------------------------------------
  * Kafdrop Kafka UI
@@ -31,7 +26,11 @@ public class ImperativeUppercaseFunctionApp {
      * -------------------------------------------
      * Function
      * -------------------------------------------
-     * Bound to "input" and "output" channels
+     * Bound to "uppercase-in-0" and "uppercase-out-0" channels
+     *
+     * - auto generates topics with the same name if properties
+     *   spring.cloud.stream.bindings.<channelName>.destination
+     *   are not set
      */
     @Bean
     public Function<String, String> uppercase() {

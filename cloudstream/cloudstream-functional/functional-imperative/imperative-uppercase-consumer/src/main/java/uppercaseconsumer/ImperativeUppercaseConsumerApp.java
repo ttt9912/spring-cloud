@@ -8,11 +8,6 @@ import org.springframework.context.annotation.Bean;
 import java.util.function.Consumer;
 
 /*
- * -------------------------------------------
- * Sink
- * -------------------------------------------
- * - in terms of spring integration
- * - "input" channel
  *
  * -------------------------------------------
  * Kafdrop Kafka UI
@@ -31,7 +26,7 @@ public class ImperativeUppercaseConsumerApp {
      * -------------------------------------------
      * Consumer
      * -------------------------------------------
-     * Bound to "input" channel
+     * Bound to "uppercaseSink-in-0" channel
      */
     @Bean
     public Consumer<String> uppercaseSink() {

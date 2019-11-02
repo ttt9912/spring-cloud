@@ -6,6 +6,6 @@ server.port: 18053
 # define which function method will be triggered if there are multiple
 # spring.cloud.function.definition: stringSource
 
-# set topic of output channel (default topic = 'output')
+# set topic of stringSource-out-0 channel (default topic = 'stringSource-out-0')
 # topic is auto-created
-spring.cloud.stream.bindings.output.destination: strings
+spring.cloud.stream.bindings.stringSource-out-0.destination: strings

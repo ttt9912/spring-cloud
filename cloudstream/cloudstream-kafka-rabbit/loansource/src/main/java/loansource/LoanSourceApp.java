@@ -42,7 +42,9 @@ public class LoanSourceApp {
     /*
      * Spring Cloud Function Support
      * - periodically triggered every 1s
-     * - sends result to default MessageChannel "output"
+     * - auto generates MessageChannel "supplyLoan-out-0"
+     * - bind to topic "loan" with spring.cloud.stream.bindings.supplyLoan-out-0.destination property
+     * - otherwise auto generates Topic "supplyLoan-out-0"
      */
     @Bean
     public Supplier<Loan> supplyLoan() {

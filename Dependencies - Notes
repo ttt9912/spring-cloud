@@ -3,6 +3,11 @@ concrete module
 
 parent
 - define Versions in dependencyManagement
+- define minimum core dependencies for all modules
 
+core module (clean alternative)
+- every module depends on core
+- contains core dependencies
+- no dependencies in parent, only dependencyManagement
 
 no dependencyManagement or dependencies in 'middle' modules

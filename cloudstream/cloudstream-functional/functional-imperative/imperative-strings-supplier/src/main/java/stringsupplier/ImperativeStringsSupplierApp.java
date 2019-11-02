@@ -9,12 +9,6 @@ import java.util.function.Supplier;
 
 /*
  * -------------------------------------------
- * Source
- * -------------------------------------------
- * - in terms of spring integration
- * - "output" channel
- *
- * -------------------------------------------
  * Kafdrop Kafka UI
  * -------------------------------------------
  * http://localhost:9000/
@@ -34,8 +28,9 @@ public class ImperativeStringsSupplierApp {
      * - periodically triggered every 1s
      *      => spring.integration.poller.fixed-delay
      *
-     * - sends result to default MessageChannel "output"
-     *      => spring.cloud.stream.bindings.output.destination
+     * - sends result to default MessageChannel "stringSource-out-0"
+     *      => Define Topic: spring.cloud.stream.bindings.stringSource-out-0.destination
+     *      => default generated Topic: "stringSource-out-0"
      *
      * - if there is more than 1 Supplier bean, define bean
      *   name to be bound to binding desitnations with:
