@@ -1,0 +1,20 @@
+-----------------------------------------------------------------------------
+Feign
+-----------------------------------------------------------------------------
+- using interfaces to communicate with endpoints
+- interfaces will be automatically implemented at runtime
+
+-----------------------------------------------------------------------------
+Discovery aware Feign
+-----------------------------------------------------------------------------
+- feign is a discovery-aware Spring RestTemplate
+- instead of service-urls, it is using service-names
+- no EurekaClient needed
+
+-----------------------------------------------------------------------------
+Discovery without Feign (with RestTemplate)
+-----------------------------------------------------------------------------
+we would have to autowire an instance of EurekaClient into our controller
+with which we could receive a service-information by service-name as an
+Application object
+

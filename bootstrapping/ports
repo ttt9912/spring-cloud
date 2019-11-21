@@ -1,7 +1,0 @@
-config server:  12000
-discovery:      13000
-zipkin:         14000
-gateway         8080
-book            15100
-bookrating      15200
-rating          15300

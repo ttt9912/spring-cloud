@@ -16,13 +16,4 @@
         <module>reactive-uppercase-function</module>
         <module>reactive-function-arity</module>
     </modules>
-
-    <dependencies>
-        <!-- spring-cloud -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-stream</artifactId>
-        </dependency>
-    </dependencies>
-
 </project>

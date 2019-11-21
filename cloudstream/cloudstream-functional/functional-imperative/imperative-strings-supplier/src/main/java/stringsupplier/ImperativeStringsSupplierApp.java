@@ -39,7 +39,7 @@ public class ImperativeStringsSupplierApp {
     @Bean
     public Supplier<String> stringSource() {
         return () -> {
-            final String string = StaticStrings.random();
+            final String string = StaticStrings.getAny();
             log.info(">> stringSource - {}", string);
             return string;
         };

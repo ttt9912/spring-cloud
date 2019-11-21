@@ -16,8 +16,9 @@ import org.springframework.context.annotation.Bean;
  * ------------------------------------------------------------------
  * Defined Routes
  * ------------------------------------------------------------------
- * localhost:8080/book-service/books            ==>   localhost:8083 (Book Service)
- * localhost:8080/rating-service/ratings_json/all    ==>   localhost:8084 (Rating Service)
+ * localhost:8080/book-service/books                    ==>   localhost:random (Book Service)
+ * localhost:8080/rating-service/ratings                ==>   localhost:random (Rating Service)
+ * localhost:8080/bookrating-service/bookratings        ==>   localhost:random (BookRating Service)
  *
  */
 @SpringBootApplication

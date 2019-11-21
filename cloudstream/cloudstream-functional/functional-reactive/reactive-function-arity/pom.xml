@@ -13,6 +13,11 @@
     <artifactId>reactive-function-arity</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>ch.ttt</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+
         <!-- spring-cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

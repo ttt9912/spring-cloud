@@ -12,13 +12,12 @@
     <groupId>ch.ttt</groupId>
     <artifactId>loancheck</artifactId>
 
-    <properties>
-        <!-- using the latest spring-cloud-stream version directly (not via DepMgmnt) -->
-        <spring-cloud-stream.version>2.2.1.RELEASE</spring-cloud-stream.version>
-    </properties>
-
-
     <dependencies>
+        <dependency>
+            <groupId>ch.ttt</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
+
         <!-- spring-cloud -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>

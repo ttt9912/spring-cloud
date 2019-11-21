@@ -13,6 +13,10 @@
     <artifactId>config-server</artifactId>
 
     <dependencies>
+        <dependency>
+            <groupId>ch.ttt</groupId>
+            <artifactId>common</artifactId>
+        </dependency>
 
         <!-- spring-cloud -->
         <dependency>

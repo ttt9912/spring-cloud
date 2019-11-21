@@ -19,6 +19,5 @@
         <module>gateway-server</module>
         <module>rating-service</module>
         <module>bookrating-service</module>
-        <module>zipkin-server</module>
     </modules>
 </project>

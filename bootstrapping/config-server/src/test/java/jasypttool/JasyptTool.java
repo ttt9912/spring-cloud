@@ -14,7 +14,7 @@ public class JasyptTool {
         encryptor.setPassword(MASTER_PW);
         encryptor.setAlgorithm(ALGORITHM);
 
-        final String encrypted = encryptor.encrypt("hello");
+        final String encrypted = encryptor.encrypt("s3cr3t");
 
         System.out.println(encrypted);
     }
@@ -25,7 +25,7 @@ public class JasyptTool {
         encryptor.setPassword(MASTER_PW);
         encryptor.setAlgorithm(ALGORITHM);
 
-        final String decrypted = encryptor.decrypt("MTg8BFBemxddDhE4xz+hJw==");
+        final String decrypted = encryptor.decrypt("Q3IwXmD+b2Gi0N7zKirbYg==");
 
         System.out.println(decrypted);
     }

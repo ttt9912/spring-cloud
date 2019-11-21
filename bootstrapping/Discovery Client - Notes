@@ -1,0 +1,27 @@
+-----------------------------------------------------------------------------
+Discovery Client
+-----------------------------------------------------------------------------
+- all applications that register on the discovery server
+
+-----------------------------------------------------------------------------
+discovery aware @SpringBootApplication
+-----------------------------------------------------------------------------
+include a Spring Discovery Client (Eureka, Zookeeper, etc.)
+- spring-cloud-netflix-eureka-client
+- spring-cloud-starter-netflix-eureka-client
+- spring-cloud-starter-zookeeper-discovery
+
+-----------------------------------------------------------------------------
+- @EnableDiscoveryClient / @EnableEurekaClient
+-----------------------------------------------------------------------------
+- annotate a @Configuration with either  @EnableDiscoveryClient or
+  @EnableEurekaClient
+- optional with spring-cloud-starter-netflix-eureka-client
+- with Zookeeper: @EnableDiscoveryClient
+
+-----------------------------------------------------------------------------
+Random Port
+-----------------------------------------------------------------------------
+We can let Spring Boot choose a random port for us because later we are
+accessing this service with its name.
+- server.port: 0

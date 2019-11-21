@@ -25,8 +25,7 @@ public class BookServiceApp {
     }
 
     @Bean
-    CommandLineRunner ctx(
-            @Value("${spring.application.name}") String appName) {
+    CommandLineRunner ctx(@Value("${spring.application.name}") String appName) {
         return args -> {
             System.out.println(">> defined in Config Repo: spring.application.name=" + appName);
         };

@@ -49,7 +49,7 @@ public class LoanSourceApp {
     @Bean
     public Supplier<Loan> supplyLoan() {
         return () -> {
-            final Loan loan = StaticLoanData.get();
+            final Loan loan = StaticLoanData.getAny();
             log.info(">> Loan created {}", loan);
             return loan;
         };

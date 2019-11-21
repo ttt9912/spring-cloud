@@ -1,0 +1,3 @@
+Refresh Context
+- gateway server is not auto refreshed when route is added
+  (restart required)

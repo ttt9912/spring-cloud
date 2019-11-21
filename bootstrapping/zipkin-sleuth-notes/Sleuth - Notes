@@ -1,0 +1,28 @@
+-----------------------------------------------------------------------------
+Sleuth
+-----------------------------------------------------------------------------
+- makes it possible to identify logs to a specific job, thread, or request
+
+-----------------------------------------------------------------------------
+Sleuth Token
+-----------------------------------------------------------------------------
+contains:
+- application name
+- trace id (given by sleuth, same in all services for one request)
+- span id (given by sleuth, same in the same unit of work => method)
+- exportToZipkin flag
+
+INFO [book-service,cdb908ecdb6c16ef,cdb908ecdb6c16ef,false]
+
+-----------------------------------------------------------------------------
+spring.sleuth.sampler.percentage
+-----------------------------------------------------------------------------
+How many of the requests will be traced in percent
+- 1 => 100% (all requests are traced)
+- default = 0.1 (10%)
+
+-----------------------------------------------------------------------------
+Sampler
+-----------------------------------------------------------------------------
+- Sampler Bean can be created manually
+- override isSampled() to decide, if a given Span should be traced

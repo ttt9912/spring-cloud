@@ -1,0 +1,7 @@
+Docker Compose files: https://github.com/openzipkin-attic/docker-zipkin
+
+-----------------------------------------------------------------------------
+Run
+-----------------------------------------------------------------------------
+docker-compose up
+=> localhost:9411

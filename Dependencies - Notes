@@ -1,13 +1,15 @@
-concrete module
-- define dependency
-
 parent
 - define Versions in dependencyManagement
-- define minimum core dependencies for all modules
+- no dependencies
 
-core module (clean alternative)
-- every module depends on core
+concrete module
+- define dependencies
+
+common module
+- every module depends on common
 - contains core dependencies
-- no dependencies in parent, only dependencyManagement
+    - lombok
+    - spring-boot-starter-web
+    - spring-boot-starter-test
 
 no dependencyManagement or dependencies in 'middle' modules

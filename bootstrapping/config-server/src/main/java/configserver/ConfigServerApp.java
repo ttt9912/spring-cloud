@@ -49,7 +49,7 @@ public class ConfigServerApp {
     @Bean
     CommandLineRunner ctx(ApplicationContext context) {
         return args -> {
-            System.out.println(">>> " + context.getEnvironment().getProperty("spring.security.user.password"));
+            log.info(">>> " + context.getEnvironment().getProperty("spring.security.user.password"));
         };
     }
 
