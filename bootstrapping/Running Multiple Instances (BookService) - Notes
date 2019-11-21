@@ -13,3 +13,7 @@ Discovery Server (Eureka)
 -----------------------------------------------------------------------------
 Gateway (Zuul)
 -----------------------------------------------------------------------------
+- instances are automatically registered in DynamicServerListLoadBalancer
+  (visible in logs)
+- route is mapped to Zuul Controller which takes care of forwarding requests
+  to the actual instances
